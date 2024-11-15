@@ -8,7 +8,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   function logout(){
     localStorage.removeItem('authUser');
-    navigate('/Login');
+    navigate('/login');
     window.location.reload();
   }
   return (
