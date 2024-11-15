@@ -8,8 +8,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   function logout(){
     localStorage.removeItem('authUser');
-    navigate('https://car-management-app-tau.vercel.app/');
-    window.location.reload();
+    window.location.href = '/login'; 
   }
   return (
     <nav className="bg-blue-500 p-4">
