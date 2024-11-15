@@ -8,7 +8,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   function logout(){
     localStorage.removeItem('authUser');
-    window.location.href = '/login'; 
+   navigate('/login');
   }
   return (
     <nav className="bg-blue-500 p-4">
