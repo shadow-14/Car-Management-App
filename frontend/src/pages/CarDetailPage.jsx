@@ -16,7 +16,7 @@ const CarDetailPage = () => {
         const token = JSON.parse(localStorage.getItem('authUser'));
         const response = await axios({
             method: 'GET',
-            url: `http://localhost:3000/api/cars/${id}`,
+            url: `${apiUrl}/api/cars/${id}`,
             headers: { authorization: `Bearer ${token}` }
         });
         setCar(response.data);
@@ -39,7 +39,7 @@ const CarDetailPage = () => {
   const handleSave = async () => {
     try {
       const token = JSON.parse(localStorage.getItem('authUser'));
-      await axios.put(`http://localhost:3000/api/cars/${car._id}`, formData, {
+      await axios.put(`${apiUrl}/api/cars/${car._id}`, formData, {
         headers: { authorization: `Bearer ${token}` },
       });
       setCar({ ...car, ...formData });
@@ -53,7 +53,7 @@ const CarDetailPage = () => {
   const handleDelete = async () => {
     try {
       const token = JSON.parse(localStorage.getItem('authUser'));
-      await axios.delete(`http://localhost:3000/api/cars/${car._id}`, {
+      await axios.delete(`${apiUrl}/api/cars/${car._id}`, {
         headers: { authorization: `Bearer ${token}` },
       });
       alert('Car deleted successfully');
